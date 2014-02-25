@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ntpdate -b -s -u pool.ntp.org
+
+opkg update
+opkg install python python-modules python-pyserial python-numpy python-setuptools python-misc python-pip git
+
+git config --global http.sslverify false
+wget https://raw.github.com/foosel/OctoPrint/master/requirements-bbb.txt
+pip install -r requirements-bbb.txt
+
+npm install serialport
+npm install i2c
+npm install bbio
+npm install async
+
