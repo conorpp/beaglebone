@@ -3,7 +3,10 @@
 ntpdate -b -s -u pool.ntp.org
 
 opkg update
-opkg install python python-modules python-pyserial python-numpy python-setuptools python-misc python-pip git
+opkg install python python-modules python-pyserial python-numpy python-setuptools python-misc python-pip git ntp
+
+
+ntpdate -b -s -u pool.ntp.org
 
 git config --global http.sslverify false
 wget https://raw.github.com/foosel/OctoPrint/master/requirements-bbb.txt
